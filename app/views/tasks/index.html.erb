@@ -1,0 +1,38 @@
+<table>
+    <thead>
+    <tr>
+        <th>Pending Tasks</th>
+    </tr>
+    </thead>
+    
+    <tbody>    
+        <% @tasks.each do |task| %>
+            <% if task.status == false %> 
+            <tr>
+                <td><%= task.title %></td> 
+            </tr>
+            <% end %>
+        <% end %>
+    </tbody>
+</table>
+<br/>
+
+<table>
+    <thead>
+    <tr>
+        <th>Completed Tasks</th>
+    </tr>
+    </thead>    
+
+    <tbody>  
+        <% @tasks.each do |task| %>
+            <% if task.status == true %> 
+            <tr>
+                <td><%= task.title %></td>
+            </tr>    
+            <% end %>
+        <% end %>
+    </tbody>        
+</table>
+
+
