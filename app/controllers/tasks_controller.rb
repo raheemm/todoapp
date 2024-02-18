@@ -37,6 +37,7 @@ class TasksController < ApplicationController
     def create
         task_params = params.require(:task).permit(:title, :status)
         @task = Task.new(task_params)
+        @task.user = User.first 
         if @task.save
             flash[:notice] = "Task was created"
             redirect_to @task
