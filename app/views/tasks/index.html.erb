@@ -13,6 +13,7 @@
                 <td><%= link_to 'Edit', edit_task_path(task) %></td>
                 <td><%= button_to 'Done', done_url(task) %></td>
                 <td><%= button_to 'Delete', task_path(task), method: :delete %></td>
+                <td><%= task.user.username %></td>
                 
             </tr>
             <% end %>
@@ -36,7 +37,7 @@
                 <td><%= link_to 'Edit', edit_task_path(task) %></td>
                 <td><%= button_to 'Undo', undo_url(task) %></td>
                 <td><%= button_to 'Delete', task_path(task), method: :delete %></td>
-
+                <td><%= task.user.username %></td>
             </tr>    
             <% end %>
         <% end %>

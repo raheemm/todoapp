@@ -10,6 +10,7 @@
             <% if task.status == false %> 
             <tr>
                 <td><%= task.title %></td> 
+                <td><%= task.user.username if @task.user %></td>
                 <td><%= link_to 'Edit', edit_task_path(task) %></td>
                 <td><%= button_to 'Done', done_url(task) %></td>
                 <td><%= button_to 'Delete', task_path(task), method: :delete %></td>
