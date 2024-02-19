@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   post '/undo/:id', to: 'tasks#undo', as: 'undo'
   get '/undo/:id', to: 'tasks#index'
 
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
+
 end
